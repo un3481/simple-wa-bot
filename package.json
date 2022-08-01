@@ -1,0 +1,47 @@
+{
+  "name": "simple-wa-bot",
+  "version": "1.0.0",
+  "description": "Simple Whatsapp Bot",
+  "author": "anthony",
+  "license": "MIT",
+  "type": "module",
+  "main": "build/index.js",
+  "scripts": {
+    "transpile": "tsc -p tsconfig.json",
+    "beautify": "js-beautify -r --editorconfig ./build/**/*.{js,ts,tsx}",
+    "build": "rm -rf \"./build/*\" && npm run transpile && npm run beautify",
+    "start": "node ./build/index.js",
+    "load": "npm run build && npm run start",
+    "setup": "npm install && cp ./src/lib/wapi.js ./node_modules/venom-bot/dist/lib/wapi/wapi.js && npm run build"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "node-cron": "^2.0.3",
+    "textract": "^2.5.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.5",
+    "venom-bot": "^4.0.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.20",
+    "@types/node-cron": "^2.0.3",
+    "@types/request-ip": "^0.0.35",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "js-beautify": "^1.13.5",
+    "prettier": "^2.2.1"
+  },
+  "resolutions": {}
+}
